@@ -202,12 +202,19 @@ h2 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.5px;
 .checklist li { padding: 10px 0 10px 34px; position: relative; border-bottom: 1px solid var(--border); }
 .checklist li:last-child { border-bottom: none; }
 .checklist li::before {
-  content: "✓";
+  content: "";
+  position: absolute; left: 9px; top: 14px;
+  width: 6px; height: 11px;
+  border-right: 2px solid var(--accent-bright);
+  border-bottom: 2px solid var(--accent-bright);
+  transform: rotate(45deg);
+}
+.checklist li::after {
+  content: "";
   position: absolute; left: 2px; top: 10px;
-  width: 22px; height: 22px; line-height: 22px; text-align: center;
+  width: 22px; height: 22px;
   background: var(--accent-soft); border: 1px solid var(--border-strong);
   border-radius: 50%;
-  color: var(--accent-bright); font-weight: 900; font-size: 13px;
 }
 
 /* ---- Steps ---- */
